@@ -1,0 +1,29 @@
+{
+        "customBaseDir" :"logs/",  
+        "customDefaultAtt" :{  
+            "type": "dateFile",  
+            "absolute": true,  
+            "alwaysIncludePattern": true  
+        },  
+        "appenders": [  
+                {"type": "console", "category": "console"},  
+                {"pattern": "yyyy-MM-dd-all.log","category": "logAll"},
+                {"pattern": "yyyy-MM-dd-trace.log", "category": "logTrace"},
+                {"pattern": "yyyy-MM-dd-debug.log", "category": "logDebug"},  
+                {"pattern": "yyyy-MM-dd-info.log", "category": "logInfo"},  
+                {"pattern": "yyyy-MM-dd-warn.log", "category": "logWarn"},  
+                {"pattern": "yyyy-MM-dd-error.log", "category": "logError"},
+                {"pattern": "yyyy-MM-dd-fatal.log", "category": "logFatal"}  
+       ],  
+       "replaceConsole": true,  
+       "levels": { 
+       						 "console": "ALL",
+       						 "logAll" : "ALL", 
+       						 "logTrace" : "TRACE",
+       						 "logDebug": "DEBUG",
+       						 "logInfo" : "INFO",
+       						 "logWarn": "WARN", 
+       						 "logError": "ERROR",
+       						 "logFatal": "FATAL"
+       					 }  
+} 

@@ -1,0 +1,9 @@
+
+.project
+
+.settings/org.eclipse.php.core.prefs
+
+.settings/org.eclipse.php.debug.core.Debug_Process_Preferences.prefs
+/bower_components/
+/node_modules/
+/Node_blog_V2/
