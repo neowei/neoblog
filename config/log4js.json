@@ -25,5 +25,5 @@
        						 "logWarn": "WARN", 
        						 "logError": "ERROR",
        						 "logFatal": "FATAL"
-       					 }  
+     }  
 } 

@@ -52,7 +52,7 @@ Bootstrap.prototype.initGlobal = function() {
 Bootstrap.prototype.initRoutes = function() {
     var controller = require(path.join(this.opts.corepath, 'controller.js'));
     var _router = new Router();
-    var routes = require(path.join(config.corepath, 'routes.js'));
+    var routes = require(path.join(config.configpath, 'routes.js'));
     _.each(routes, function(route) {
         var handle = controller[route.controller][route.handle];
         _router[route.method](route.url, handle);

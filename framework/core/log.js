@@ -5,7 +5,7 @@ var path = require("path");
 exports = module.exports = log;
 
 function log() {
-    var objConfig = JSON.parse(fs.readFileSync(config.loggerconfig, "utf8"));
+    var objConfig = JSON.parse(fs.readFileSync(path.join(config.configpath,'log4js.json'), "utf8"));
     if (objConfig.appenders) {
         var baseDir = path.join(config.rootpath, objConfig["customBaseDir"]);
         var defaultAtt = objConfig["customDefaultAtt"];
