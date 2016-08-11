@@ -55,7 +55,7 @@ gulp.task('build-js', function() {
     }
     buildjs(c.buildjs, true);
 });
- 
+
 gulp.task('build-jslib', function() {
     var buildjslib = function(buildpath, filename) {
         gulp.src(buildpath).pipe(gulpif(!c.isprod, sourcemaps.init())).pipe(concat(filename)).pipe(gulpif(!c.isprod, gulp.dest(c.jspath))).pipe(rename({
@@ -69,6 +69,6 @@ gulp.task('build-jslib', function() {
         })));
     };
     // buildjslib(c.buildjsframeworkmobile, 'egobus-framework-mobile.js');
-    buildjslib(c.buildjsframework, 'egobus-framework.js');
-    buildjslib(c.buildjscommon, 'egobus-common.js');
+    buildjslib(c.buildjsframework, 'neowei-framework.js');
+    // buildjslib(c.buildjscommon, 'egobus-common.js');
 });

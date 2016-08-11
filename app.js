@@ -1,14 +1,9 @@
-var path = require('path');
-var Bootstrap = require(path.join(__dirname, 'framework/core/bootstrap.js'));
-var config = require(path.join(__dirname, 'config/define.js'))(__dirname);
-var bootstrap = new Bootstrap(config);
+import Bootstrap from './framework/core/bootstrap.js';
 
-bootstrap.initGlobal();
-
-bootstrap.start();
-
-// bootstrap.connectDb();
-
-bootstrap.errHandle(function(err) {
-    logger(err);
-});
+export default class App {
+    constructor() {
+        this.bootstrap = new Bootstrap(__dirname);
+        this.bootstrap.init();
+    }
+}
+new App();

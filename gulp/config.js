@@ -18,10 +18,9 @@ function Extend() {
     this.audiopath = this.rootpath + '/dist/' + this.environment + '/audio/';
     // this.viewpath = path.dirname(this.rootpath) + '/egobus_view/**/*.phtml';
 
-    this.buildcsslib = [ this.rootpath + '/bower_components/bootstrap/dist/css/bootstrap.css', this.rootpath + '/bower_components/art-dialog/css/ui-dialog.css',
-            this.rootpath + '/bower_components/Swiper/dist/css/swiper.css' ];
-    this.buildjsframework = [ this.rootpath + '/bower_components/jquery/dist/jquery.js', this.rootpath + '/bower_components/bootstrap/dist/js/bootstrap.js' ];
-    this.buildjsframeworkmobile = [ this.rootpath + '/bower_components/zeptojs/dist/zeptojs.js', this.rootpath + '/bower_components/bootstrap/dist/js/bootstrap.js' ];
+    this.buildcsslib = [ this.rootpath + '/bower_components/semantic/dist/css/semantic.css', this.rootpath + '/bower_components/art-dialog/css/ui-dialog.css'];
+    this.buildjsframework = [ this.rootpath + '/bower_components/jquery/dist/jquery.js', this.rootpath + '/bower_components/semantic/dist/semantic.js' ];
+//    this.buildjsframeworkmobile = [ this.rootpath + '/bower_components/zeptojs/dist/zeptojs.js', this.rootpath + '/bower_components/bootstrap/dist/js/bootstrap.js' ];
     this.buildjscommon = [ this.rootpath + '/bower_components/art-dialog/dist/dialog.js', this.rootpath + '/bower_components/jquery_lazyload/jquery.lazyload.js',
             './bower_components/Swiper/dist/js/swiper.jquery.js' ];
 

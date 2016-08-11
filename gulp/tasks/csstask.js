@@ -67,7 +67,7 @@ gulp.task('build-scss', function() {
 });
 
 gulp.task('build-csslib', [ 'build-scss' ], function() {
-    gulp.src(c.buildcsslib).pipe(autoprefixer()).pipe(gulpif(!c.isprod, sourcemaps.init())).pipe(concat('egobus-style.css')).pipe(gulp.dest(c.csspath)).pipe(rename({
+    gulp.src(c.buildcsslib).pipe(autoprefixer()).pipe(gulpif(!c.isprod, sourcemaps.init())).pipe(concat('neowei-style.css')).pipe(gulp.dest(c.csspath)).pipe(rename({
         suffix : '.min'
     })).pipe(nano()).pipe(gulpif(!c.isprod, sourcemaps.write('.'))).pipe(gulp.dest(c.csspath)).pipe(gulpif(c.isprod || c.istest, gzip({
         gzipOptions : {

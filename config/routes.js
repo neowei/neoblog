@@ -8,4 +8,9 @@ exports = module.exports = [ {
     url : '/test',
     controller : 'index',
     handle : 'test'
+}, {
+    method : 'get',
+    url : '/resume',
+    controller : 'resume',
+    handle : 'index'
 } ];
