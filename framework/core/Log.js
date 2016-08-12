@@ -61,7 +61,9 @@ export default class Log {
         if (msg == null) {
             msg = "";
         }
-        this.console.trace(msg);
+        if(config.env === 1) {
+            this.console.trace(msg);
+        }
         this.logAll.trace(msg);
         this.logTrace.trace(msg);
     }
@@ -70,7 +72,9 @@ export default class Log {
         if (msg == null) {
             msg = "";
         }
-        this.console.debug(msg);
+        if(config.env === 1) {
+            this.console.debug(msg);
+        }
         this.logAll.debug(msg);
         this.logDebug.debug(msg);
     }
@@ -79,7 +83,9 @@ export default class Log {
         if (msg == null) {
             msg = "";
         }
-        this.console.info(msg);
+        if(config.env === 1) {
+            this.console.info(msg);
+        }
         this.logAll.info(msg);
         this.logInfo.info(msg);
     }
@@ -88,7 +94,9 @@ export default class Log {
         if (msg == null) {
             msg = "";
         }
-        this.console.warn(msg);
+        if(config.env === 1) {
+            this.console.warn(msg);
+        }
         this.logAll.warn(msg);
         this.logWarn.warn(msg);
     }
@@ -100,7 +108,9 @@ export default class Log {
         if (exp != null) {
             msg += "\r\n" + exp;
         }
-        this.console.error(msg);
+        if(config.env === 1) {
+            this.console.error(msg);
+        }
         this.logAll.error(msg);
         this.logError.error(msg);
     }
@@ -112,7 +122,9 @@ export default class Log {
         if (exp != null) {
             msg += "\r\n" + exp;
         }
-        this.console.fatal(msg);
+        if(config.env === 1) {
+            this.console.fatal(msg);
+        }
         this.logAll.fatal(msg);
         this.logFatal.fatal(msg);
     }

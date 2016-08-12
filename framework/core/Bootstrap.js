@@ -35,12 +35,6 @@ export default class Bootstrap {
         this.initServer();
     }
     
-    initServer() {
-        this.port = this.opts.port || 8000;
-        this.koa.listen(this.port);
-        logger.trace("initlizing server listening on " + this.port); 
-    }
-    
     initConfig() {
         var Define = require(path.join(this.opts.rootpath, 'config/Define.js')).default;
         this.opts = new Define(this.opts.rootpath);
@@ -52,12 +46,12 @@ export default class Bootstrap {
         global.logger = new Log();
         this.koa.use(KoaLogger());
         logger.use(this.koa);
-        logger.trace("initlizing koa logger");
+        logger.trace("initlizing log");
     }
     
     initView() {
         var View = require(path.join(this.opts.corepath, 'View.js')).default;
-        global.view = new View();
+        global.view = new View(this.koa);
         logger.trace("initlizing view");
     }
     
@@ -67,7 +61,18 @@ export default class Bootstrap {
         this.koa.use(router.getRoutes()).use(router.getAllowedMethods());
         logger.trace("initlizing router");
     }
-        
+    
+    initServer() {
+        this.port = this.opts.port || 8000;
+        this.koa.listen(this.port);
+        logger.trace("initlizing server listening on " + this.port); 
+    }
+    
+    errHandle(callback){
+        logger(callback);
+        process.on('uncaughtException', callback);
+    }
+}
 // var routes = require(path.join(config.configpath, 'routes.js'));
 // _.each(routes, function(route) {
 // console.log(route);
@@ -88,8 +93,3 @@ export default class Bootstrap {
 // }
 // });
 // }
-    errHandle(callback){
-        logger(callback);
-        process.on('uncaughtException', callback);
-    }
-}

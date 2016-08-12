@@ -1,8 +1,7 @@
-
 import path from 'path';
+
 export default class Define{
     constructor(rootpath) {
-        this.loglevel = 'ALL';
         this.rootpath = rootpath;
         this.mongodb = 'mongodb://localhost:27017/neoblog';
         this.redishost = 'localhost';
@@ -15,6 +14,17 @@ export default class Define{
         this.viewpath = path.join(rootpath, 'view');
         this.controllerpath = path.join(rootpath, 'controller');
         this.secret = 'neowei';
+        this.environment = process.env.NODE_ENV;
+        if (process.env.NODE_ENV === 'production') {
+            this.env = 3;
+            this.loglevel = 'logInfo';
+        } else if (process.env.NODE_ENV === 'testing') {
+            this.env = 2;
+            this.loglevel = 'logDebug';
+        } else {
+            this.loglevel = 'ALL';
+            this.env = 1;
+        }
         this.port = 8000;
     }
 }

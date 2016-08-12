@@ -1,10 +1,7 @@
 import path from 'path';
-import coViews from 'co-views';
-
+import views from 'koa-views';
 export default class View {
-    constructor() {
-        this.render = coViews(config.viewpath, {
-            default : 'jade'
-        });
+    constructor(app) {
+        app.use(views(config.viewpath, {extension: 'pug'}));
     }
 }
